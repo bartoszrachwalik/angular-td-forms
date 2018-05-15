@@ -21,6 +21,10 @@ export class AppComponent {
   };
   submitted = false;
 
+  subscriptions = ['basic', 'advance', 'pro'];
+  selectedSubscription = 'advanced';
+  @ViewChild('signupForm') sgnForm: NgForm;
+
   suggestUserName() {
     const suggestedName = 'Superuser';
     // this.signupForm.setValue({
@@ -53,5 +57,9 @@ export class AppComponent {
     this.user.gender = this.signupForm.value.gender;
 
     this.signupForm.reset();
+  }
+
+  excercise() {
+    console.log(this.sgnForm.value);
   }
 }
